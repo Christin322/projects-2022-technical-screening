@@ -75,6 +75,8 @@ const altNumbers = (numArray) => {
         }
     }
     
+    console.log(newArray)
+    
     return newArray;
 }
 
