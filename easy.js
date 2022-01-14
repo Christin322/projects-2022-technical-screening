@@ -32,6 +32,10 @@ var assert = require("assert")
 
 const altNumbers = (numArray) => {
     // TODO: COMPLETE THIS FUNCTION
+    if (numArray.length == 0) {
+        return numArray;
+    }
+    
     let numNeg = 0;
     let numPos = 0;
     for(i = 0; i < numArray.length) {
@@ -42,7 +46,6 @@ const altNumbers = (numArray) => {
         }
     }
    
-    
     var newArray = [];
     if (numPos >= numNeg) {
         let posIndex = 0;
@@ -57,22 +60,22 @@ const altNumbers = (numArray) => {
                 posIndex = posIndex + 2;
             }
         }
-            
-            // if postive indexes are positive numbers add it to new array
-            if (i % 2 = 0) {
-                if (numArray[i] > 0) {
-                    newArray[i] = numArray[i];
-                }
-            // odd number index
-            } else {
-                
-    } else if (numPos < numNeg) {
-    
+    } else {
+        let posIndex = 1;
+        let negIndex = 0;
+        
+        for (i = 0; i < numArray.length) {
+            if (numArray[i] >= 0) { 
+                newArray[posIndex] = numArray[i];
+                posIndex = posIndex + 2;
+            } else { 
+                newArray[negIndex] = numArray[i];
+                posIndex = posIndex + 2;
+            }
+        }
     }
     
-    
-    
-    return [];
+    return newArray;
 }
 
 module.exports = { altNumbers } // Do not modify this line
