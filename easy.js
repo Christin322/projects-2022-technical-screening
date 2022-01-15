@@ -31,52 +31,49 @@ var assert = require("assert")
 // Explanation: Empty array...
 
 const altNumbers = (numArray) => {
-    // TODO: COMPLETE THIS FUNCTION
     if (numArray.length == 0) {
         return numArray;
     }
     
     let numNeg = 0;
     let numPos = 0;
-    for(i = 0; i < numArray.length) {
+    for(i = 0; i < numArray.length; i++) {
         if (numArray[i] < 0) {
             ++numNeg;
         } else if (numArray[i] >= 0) {
             ++numPos;
         }
     }
-   
+
     var newArray = [];
     if (numPos >= numNeg) {
         let posIndex = 0;
         let negIndex = 1;
-        
-        for (i = 0; i < numArray.length) {
+    
+        for (i = 0; i < numArray.length; i++) {
             if (numArray[i] >= 0) { 
                 newArray[posIndex] = numArray[i];
-                posIndex = posIndex + 2;
+                posIndex += 2;
             } else { 
                 newArray[negIndex] = numArray[i];
-                posIndex = posIndex + 2;
+                negIndex += 2;
             }
         }
     } else {
         let posIndex = 1;
         let negIndex = 0;
-        
-        for (i = 0; i < numArray.length) {
+    
+        for (i = 0; i < numArray.length; i++) {
             if (numArray[i] >= 0) { 
                 newArray[posIndex] = numArray[i];
-                posIndex = posIndex + 2;
+                posIndex += 2;
             } else { 
                 newArray[negIndex] = numArray[i];
-                posIndex = posIndex + 2;
+                negIndex += 2;
             }
         }
     }
-    
-    console.log(newArray)
-    
+
     return newArray;
 }
 
